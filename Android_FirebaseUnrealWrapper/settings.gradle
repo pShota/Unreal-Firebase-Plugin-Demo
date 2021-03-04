@@ -1,0 +1,3 @@
+include ':FirebaseUnrealWrapper'
+include ':app'
+rootProject.name = "FirebaseUnrealWrapper"

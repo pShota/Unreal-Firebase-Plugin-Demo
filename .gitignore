@@ -1,0 +1,167 @@
+# Ignore thumbnails created by windows
+Thumbs.db
+
+# Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.aps
+*.vcproj.*.user
+*.vcxproj.user
+*.csproj.user
+*.vspscc
+*_i.c
+*.i
+*.icf
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug/
+[Dd]ebug.win32/
+*.sbr
+*.sdf
+obj/
+[Rr]elease/
+[Rr]elease.win32/
+_ReSharper*/
+[Tt]est[Rr]esult*
+ipch/
+*.opensdf
+*.opendb
+SubmissionInfo
+Generated Files
+AppPackages
+BundleArtifacts
+.vs/
+*.VC.db
+
+# Ignore files build by ndk and eclipse
+/libs/
+bin/
+obj/
+gen/
+local.properties
+.project
+.classpath
+.d
+android-profile/
+build/outputs/
+
+org.eclipse.jdt.core.prefs
+
+# Ignore python compiled files
+*.pyc
+
+# Ignore files build by airplay and marmalade
+build_*_xcode/
+build_*_vc10/
+
+# Ignore files build by xcode
+*.mode*v*
+*.pbxuser
+*.xcbkptlist
+*.xcworkspacedata
+*.xcuserstate
+*.xccheckout
+xcschememanagement.plist
+.DS_Store
+._.*
+IDEWorkspaceChecks.plist
+xcuserdata/
+DerivedData/
+
+# Ignore files built by AppCode
+.idea/
+
+
+
+
+# CTags
+tags
+
+# ignore files, created with make-all-linux-project script
+/lib
+/build/linux-build
+
+# Cmake files
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+CMakeLists.txt.user
+
+
+
+# Android studio
+*.iml
+.gradle/
+tmp/
+generated/
+intermediates/
+outputs/
+reports/
+test-results/
+publications/
+
+# ---------------[ Unity generated ]------------------ #
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+UnityGenerated/
+#ProjectSettings/*.asset
+
+# ----[ Visual Studio / MonoDevelop generated ]------- #
+
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# -------------[ OS generated ]------------------------ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# -------------[ Build ]------------------------ #
+*.html
+#*.unity3d
+
+
+
+.vscode/
+
+
+
+#should not have builds
+*.apk
+*.ipa
+
+#Carthage
+Carthage/
+
+#Xcode
+xcuserdata/
+
+
+#cmake intermediate files 
+.cxx/
+.externalNativeBuild/
+

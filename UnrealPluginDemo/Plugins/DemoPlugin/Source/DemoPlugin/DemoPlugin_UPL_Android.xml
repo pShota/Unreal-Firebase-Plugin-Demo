@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+	<init>
+		<log text="DemoPlugin Unreal Android Init"/>
+		<!-- check if using Gradle -->
+		<setBoolFromProperty result="bGradle" ini="Engine" section="/Script/AndroidRuntimeSettings.AndroidRuntimeSettings" property="bEnableGradle" default="false"/>
+		<if condition="bGradle">
+			<false>
+				<log text="!!DemoPlugin requires gradle integration!!"/>
+			</false>
+		</if>
+	</init>
+
+
+	<!-- optional files or directories to copy to Intermediate/Android/APK -->
+	<resourceCopies>
+		<copyFile src="$S(PluginDir)/../Libs/Android/FirebaseUnrealWrapper-release.aar" dst="$S(BuildDir)/libs/FirebaseUnrealWrapper-release.aar" />
+		<copyFile src="$S(PluginDir)/Raw/google-services.json" dst="$S(BuildDir)/gradle/app/google-services.json" />
+	</resourceCopies>
+
+
+	<baseBuildGradleAdditions> 
+	<insert>
+	allprojects {
+		repositories {
+			google()
+			jcenter()
+			maven {
+				url 'https://maven.google.com/'
+				name 'Google'
+			}
+		}
+	}
+	</insert>
+	</baseBuildGradleAdditions>
+    
+    <buildscriptGradleAdditions> 
+	<insert>
+	dependencies {
+		//firebase
+		classpath 'com.google.gms:google-services:4.3.3'  // Google Services plugin
+	}
+	</insert>
+	</buildscriptGradleAdditions>
+    
+    
+
+	<!-- We need to migrate to AndroidX library-->
+	<buildGradleAdditions>
+	<insert>
+
+
+
+
+
+android {
+
+	compileOptions {
+		sourceCompatibility 1.8
+		targetCompatibility 1.8
+	}
+}
+
+task replaceImport {
+	ant.replace(token:'import android.support.v13.app.FragmentCompat;', value:'import androidx.legacy.app.FragmentCompat;') {
+		fileset(dir: '../permission_library/src/main/java/com/google/vr/sdk/samples/permission', includes: 'PermissionFragment.java')
+	}
+	ant.replace(token:'import android.support.v4.content.ContextCompat;', value:'import androidx.core.content.ContextCompat;') {
+		fileset(dir: '../permission_library/src/main/java/com/google/vr/sdk/samples/permission', includes: 'PermissionHelper.java')
+	}
+
+	ant.replace(token:'import android.support.v4.app.NotificationCompat;', value:'import androidx.core.app.NotificationCompat;') {
+		fileset(dir: 'src/main/java/com/google/android/vending/expansion/downloader/impl', includes: 'DownloadNotification.java')
+	}
+
+	ant.replace(token:'import android.support.v4.app.NotificationCompat;', value:'import androidx.core.app.NotificationCompat;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'LocalNotificationReceiver.java')
+	}
+
+	ant.replace(token:'import android.support.annotation.NonNull;', value:'import androidx.annotation.NonNull;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4/network', includes: 'NetworkChangedManager.java')
+	}
+	ant.replace(token:'import android.support.annotation.Nullable;', value:'import androidx.annotation.Nullable;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4/network', includes: 'NetworkChangedManager.java')
+	}
+	ant.replace(token:'import android.support.annotation.NonNull;', value:'import androidx.annotation.NonNull;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4/network', includes: 'NetworkConnectivityClient.java')
+	}
+
+	ant.replace(token:'import android.support.v4.app.NotificationManagerCompat;', value:'import androidx.core.app.NotificationManagerCompat;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'GameActivity.java')
+	}
+
+	ant.replace(token:'import android.support.v4.app.ActivityCompat;', value:'import androidx.core.app.ActivityCompat;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'SplashActivity.java')
+	}
+	ant.replace(token:'import android.support.v4.content.ContextCompat;', value:'import androidx.core.content.ContextCompat;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'SplashActivity.java')
+	}
+
+	ant.replace(token:'import android.support.v4.content.FileProvider;', value:'import androidx.core.content.FileProvider;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'GameActivity.java')
+	}
+
+	ant.replace(token:'import android.arch.lifecycle.Lifecycle;', value:'import androidx.lifecycle.Lifecycle;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'GameApplication.java')
+	}
+	ant.replace(token:'import android.arch.lifecycle.LifecycleObserver;', value:'import androidx.lifecycle.LifecycleObserver;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'GameApplication.java')
+	}
+	ant.replace(token:'import android.arch.lifecycle.OnLifecycleEvent;', value:'import androidx.lifecycle.OnLifecycleEvent;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'GameApplication.java')
+	}
+	ant.replace(token:'import android.arch.lifecycle.ProcessLifecycleOwner;', value:'import androidx.lifecycle.ProcessLifecycleOwner;') {
+		fileset(dir: 'src/main/java/com/epicgames/ue4', includes: 'GameApplication.java')
+	}
+
+}
+build.dependsOn replaceImport
+
+
+dependencies {
+	//UE4 use
+	implementation 'com.google.android.gms:play-services-auth:19+'
+	implementation 'com.google.android.gms:play-services-games:19+'
+	implementation 'com.google.android.gms:play-services-nearby:17+'
+	implementation 'com.google.android.gms:play-services-plus:17+'
+
+	//FirebaseUnrealWrapper required
+	implementation 'com.google.android.gms:play-services-ads:19.3.0'
+	implementation files('src/main/libs/FirebaseUnrealWrapper-release.aar')
+	implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+
+
+}
+
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+	
+	</insert>
+	</buildGradleAdditions>
+	
+	<gradleProperties>
+		<insert>
+android.useAndroidX=true
+android.enableJetifier=true
+		</insert>
+	</gradleProperties>
+  
+
+	<androidManifestUpdates>
+
+	<addElements tag="application">
+		<!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>
+	</addElements>
+	
+		<addPermission android:name="android.permission.INTERNET" />
+		<addPermission android:name="android.permission.ACCESS_WIFI_STATE" />
+		<addPermission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	</androidManifestUpdates>
+
+	<gameActivityImportAdditions>
+	<insert>
+		import com.pshota.firebaseunrealwrapper.NotificationCenter;
+		import com.pshota.firebaseunrealwrapper.FirebaseUnrealWrapper;
+	</insert>
+	</gameActivityImportAdditions>
+	<gameActivityClassAdditions>
+	<insert>
+		
+		public static void FirebaseWrapper_firebase_init()
+		{
+			GameActivity.Get().internal_firebase_init();
+		}
+
+		public void internal_firebase_init(){
+			//setup callbacks
+			
+			GameActivity.Get().runOnUiThread(new Runnable() {
+				final Activity appActivity = GameActivity.Get();
+
+
+				@Override
+				public void run() {
+					NotificationCenter.addObserver(appActivity.getApplicationContext(),
+							NotificationCenter.NotificationType.onReceiveFcmToken,onReceiveFcmToken);
+
+
+
+					FirebaseUnrealWrapper.getInstance().firebase_init(appActivity);
+				}
+			});
+		}
+		
+
+		private BroadcastReceiver onReceiveFcmToken = new BroadcastReceiver() {
+			@Override
+			public void onReceive(Context context, final Intent intent) {
+				nativeOnReceiveFcmToken((String)intent.getExtras().get(FirebaseUnrealWrapper.NOTIFY_FCM_TOKEN_KEY));
+			}
+		};
+
+
+		////////////////////////////////////////////////
+		//native callback
+		private static native void nativeOnReceiveFcmToken(String token);
+	</insert>
+	</gameActivityClassAdditions>
+	
+	
+	
+</root>

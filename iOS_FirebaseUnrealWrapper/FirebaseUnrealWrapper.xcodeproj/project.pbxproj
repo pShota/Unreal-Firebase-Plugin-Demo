@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCA1A8D10667E059994C00A5 /* libPods-FirebaseUnrealWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44350EF6891D1833DE8D68C3 /* libPods-FirebaseUnrealWrapper.a */; };
+		D4269FF825F07519001628D6 /* EPPZSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = D4269FF625F07519001628D6 /* EPPZSwizzler.m */; };
+		D453BBDC25EFD413008B3E76 /* FirebaseUnrealWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D453BBDB25EFD413008B3E76 /* FirebaseUnrealWrapper.m */; };
+		D453BBDD25EFD413008B3E76 /* FirebaseUnrealWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D453BBDA25EFD413008B3E76 /* FirebaseUnrealWrapper.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D453BBD525EFD412008B3E76 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D453BBDD25EFD413008B3E76 /* FirebaseUnrealWrapper.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2E4E8E2238C96A3DA3F54F58 /* Pods-FirebaseUnrealWrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseUnrealWrapper.release.xcconfig"; path = "Target Support Files/Pods-FirebaseUnrealWrapper/Pods-FirebaseUnrealWrapper.release.xcconfig"; sourceTree = "<group>"; };
+		44350EF6891D1833DE8D68C3 /* libPods-FirebaseUnrealWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirebaseUnrealWrapper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4269FF625F07519001628D6 /* EPPZSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZSwizzler.m; sourceTree = "<group>"; };
+		D4269FF725F07519001628D6 /* EPPZSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZSwizzler.h; sourceTree = "<group>"; };
+		D453BBD725EFD413008B3E76 /* libFirebaseUnrealWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFirebaseUnrealWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D453BBDA25EFD413008B3E76 /* FirebaseUnrealWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseUnrealWrapper.h; sourceTree = "<group>"; };
+		D453BBDB25EFD413008B3E76 /* FirebaseUnrealWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseUnrealWrapper.m; sourceTree = "<group>"; };
+		E25F18670E859317C0B14D1E /* Pods-FirebaseUnrealWrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseUnrealWrapper.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseUnrealWrapper/Pods-FirebaseUnrealWrapper.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D453BBD425EFD412008B3E76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA1A8D10667E059994C00A5 /* libPods-FirebaseUnrealWrapper.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F42E6207DB653D63F125C72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44350EF6891D1833DE8D68C3 /* libPods-FirebaseUnrealWrapper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B890F25B8113115C4C6A875 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E25F18670E859317C0B14D1E /* Pods-FirebaseUnrealWrapper.debug.xcconfig */,
+				2E4E8E2238C96A3DA3F54F58 /* Pods-FirebaseUnrealWrapper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D453BBCE25EFD412008B3E76 = {
+			isa = PBXGroup;
+			children = (
+				D453BBD925EFD413008B3E76 /* FirebaseUnrealWrapper */,
+				D453BBD825EFD413008B3E76 /* Products */,
+				9B890F25B8113115C4C6A875 /* Pods */,
+				5F42E6207DB653D63F125C72 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D453BBD825EFD413008B3E76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D453BBD725EFD413008B3E76 /* libFirebaseUnrealWrapper.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D453BBD925EFD413008B3E76 /* FirebaseUnrealWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				D453BBDA25EFD413008B3E76 /* FirebaseUnrealWrapper.h */,
+				D453BBDB25EFD413008B3E76 /* FirebaseUnrealWrapper.m */,
+				D4269FF725F07519001628D6 /* EPPZSwizzler.h */,
+				D4269FF625F07519001628D6 /* EPPZSwizzler.m */,
+			);
+			path = FirebaseUnrealWrapper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D453BBD625EFD412008B3E76 /* FirebaseUnrealWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D453BBE025EFD413008B3E76 /* Build configuration list for PBXNativeTarget "FirebaseUnrealWrapper" */;
+			buildPhases = (
+				2EFBB5E6831CA7BE1D313B43 /* [CP] Check Pods Manifest.lock */,
+				D453BBD325EFD412008B3E76 /* Sources */,
+				D453BBD425EFD412008B3E76 /* Frameworks */,
+				D453BBD525EFD412008B3E76 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FirebaseUnrealWrapper;
+			productName = FirebaseUnrealWrapper;
+			productReference = D453BBD725EFD413008B3E76 /* libFirebaseUnrealWrapper.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D453BBCF25EFD412008B3E76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D453BBD625EFD412008B3E76 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D453BBD225EFD412008B3E76 /* Build configuration list for PBXProject "FirebaseUnrealWrapper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D453BBCE25EFD412008B3E76;
+			productRefGroup = D453BBD825EFD413008B3E76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D453BBD625EFD412008B3E76 /* FirebaseUnrealWrapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EFBB5E6831CA7BE1D313B43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebaseUnrealWrapper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D453BBD325EFD412008B3E76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4269FF825F07519001628D6 /* EPPZSwizzler.m in Sources */,
+				D453BBDC25EFD413008B3E76 /* FirebaseUnrealWrapper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D453BBDE25EFD413008B3E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D453BBDF25EFD413008B3E76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D453BBE125EFD413008B3E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E25F18670E859317C0B14D1E /* Pods-FirebaseUnrealWrapper.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D453BBE225EFD413008B3E76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E4E8E2238C96A3DA3F54F58 /* Pods-FirebaseUnrealWrapper.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D453BBD225EFD412008B3E76 /* Build configuration list for PBXProject "FirebaseUnrealWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D453BBDE25EFD413008B3E76 /* Debug */,
+				D453BBDF25EFD413008B3E76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D453BBE025EFD413008B3E76 /* Build configuration list for PBXNativeTarget "FirebaseUnrealWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D453BBE125EFD413008B3E76 /* Debug */,
+				D453BBE225EFD413008B3E76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D453BBCF25EFD412008B3E76 /* Project object */;
+}

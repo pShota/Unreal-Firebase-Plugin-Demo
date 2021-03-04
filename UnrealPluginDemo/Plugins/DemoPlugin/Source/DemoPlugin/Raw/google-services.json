@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "957339961206",
+    "project_id": "unrealplugindemo",
+    "storage_bucket": "unrealplugindemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957339961206:android:8de2c4b18ff5ae706f9c57",
+        "android_client_info": {
+          "package_name": "com.pshota.unrealplugindemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957339961206-v03g3lh55o42b7gcihdrrgei0005mq7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRaPW2JjznMJJ0cAIHwmMoU_3EY3qGmww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957339961206-v03g3lh55o42b7gcihdrrgei0005mq7c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "957339961206-15jiko7l6ln30ddj5k6u0095a3opgq6i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pshota.unrealplugindemo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
