@@ -4,7 +4,9 @@ A project demonstrates how to integrate [Firebase](http://firebase.google.com/) 
 
 **This is not a full integration**<br>
 
-Also fixing a plist path bug in iOS by using iOS swizzling,<br>
+This repo is a personal note and also trying to help who implementing plugin in UE4.<br>
+
+Also demonstrates on how to fix a plist path bug in iOS by using iOS swizzling,<br>
 which I filed a Firebase issue [here](https://github.com/firebase/firebase-ios-sdk/issues/7510)
 
 Platform: iOS and Android<br>
@@ -19,8 +21,9 @@ Analytic, Firebase Cloud Messaging.
 * JDK 12.0.2
 * NDK r21d
 
+<br>
 
-## Integration Guide
+# Plugin Implemetation Guide
 
 
 Firebase config files `google-services.json` and `GoogleService-Info.plist` placed in /DemoPlugin/Source/DemoPlugin/Raw <br>
@@ -113,6 +116,50 @@ or you can find "Firebase.h" from cocoapod sources. use #import "Firebase.h" ins
 ## Android
 
 <br>
+
+### Copy Raw files in Android
+
+use Android_UPL.xml copyFile command to do so,<br>
+copy it to gradle build folder<br>
+
+```xml
+<resourceCopies>
+	<copyFile src="$S(PluginDir)/../Libs/Android/FirebaseUnrealWrapper-release.aar" dst="$S(BuildDir)/libs/FirebaseUnrealWrapper-release.aar" />
+	<copyFile src="$S(PluginDir)/Raw/google-services.json" dst="$S(BuildDir)/gradle/app/google-services.json" />
+</resourceCopies>
+```
+
+### Support Google Services plugins
+
+you will need to add plugins classpath in build.gradle,<br>
+and let Google firebase plugins to resolves `google-services.json` into `strings.xml`
+
+again, in Android_UPL.xml
+
+you add Google Services plugin in `buildscriptGradleAdditions` tag
+
+```
+<buildscriptGradleAdditions> 
+<insert>
+	dependencies {
+		//firebase
+		classpath 'com.google.gms:google-services:4.3.3'  // Google Services plugin
+	}
+</insert>
+</buildscriptGradleAdditions>
+```
+
+and then add `apply plugin` in `buildGradleAdditions` tag
+
+```
+<buildGradleAdditions>
+<insert>
+	apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+</insert>
+</buildGradleAdditions>
+```
+
+
 
 ### Support AndroidX
 
@@ -227,7 +274,9 @@ extern "C"
 
 ### Callback handling
 
-in this demo, use C++11 feature to bind delegate methods.
+in this demo, use C++11 feature to bind delegate methods.<br>
+where CPP_CALLBACK_0 = zero method parameter<br>
+      CPP_CALLBACK_2 = two method parameters<br>
 
 ```c++
 #define CPP_CALLBACK_0(__selector__,__target__, ...) std::bind(&__selector__,__target__, ##__VA_ARGS__)
@@ -249,4 +298,11 @@ This callback support both c++ and blueprint.
 ```c++
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FonReceiveFcmTokenEvent,FString, token);
 ```
+
+<br>
+
+## Others
+
+### Using Visual Studio Code with UE4
+if you use VSCode and have problem with UE 4.25, you can read my [gist](https://gist.github.com/pShota/439bc7a0dd3c726d1d5750856fb88cd8) as well.
 
