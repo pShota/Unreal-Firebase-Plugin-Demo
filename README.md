@@ -58,6 +58,7 @@ The disadvantage of doing so is you cannot move it root path of the app aka `tar
 here comes a problem, Firebase has a bug mentioned above cannot load plist file other than default location.<br>
 you will need that swizzling fix to use this method.<br>
 
+<br>
 
 #### Method 2: Use "Cloud" folder.
 
@@ -78,6 +79,7 @@ this method can copy raw files under root folder of `target.ipa/target.app/`<br>
 The disadvantage of doing so is you must use Mac OS to build ipa.<br>
 **This will not work when using PC to build ipa using UE4 remote build.**<br>
 
+<br>
 
 #### Method 3: Use IOS_UPL.xml
 
@@ -93,6 +95,8 @@ you can also use UPL copyFile command to copy raw files.<br>
   </if>
 </iosPListUpdates>
 ```
+
+<br>
 
 ### Confront to FIRMessagingDelegate protocol
 
